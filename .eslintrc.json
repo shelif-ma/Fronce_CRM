@@ -1,0 +1,54 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "prettier",
+    "import"
+  ],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }], // Prevent `console.log` usage in production
+    "no-unused-vars": "warn", // Warn about unused variables
+    "no-debugger": "warn", // Warn about debugger statements
+    "eqeqeq": ["error", "always"], // Enforce strict equality (===)
+    "no-duplicate-imports": "error", // Prevent duplicate imports
+    "complexity": ["warn", { "max": 10 }], // Enforce complexity limit in functions
+    "consistent-return": "error", // Ensure functions always return a value
+    "import/no-unresolved": "error", // Ensure proper imports without unresolved dependencies
+    "import/named": "error", // Ensure named imports are correctly named
+    "import/default": "error", // Ensure default imports are correctly named
+    "import/no-named-as-default": "error", // Avoid using named imports as default
+    "import/no-deprecated": "warn", // Warn about deprecated imports
+    "no-shadow": "warn", // Avoid variable shadowing
+    "max-lines": [
+      "warn",
+      { "max": 300, "skipBlankLines": true, "skipComments": true }
+    ] // Limit file length
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
